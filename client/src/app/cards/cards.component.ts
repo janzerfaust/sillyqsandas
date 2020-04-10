@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms'
 
 @Component({
   selector: 'app-cards',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  constructor() { }
+  saveForm;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.saveForm = formBuilder.group({question: '', answer: ''});
+  }
 
   ngOnInit() {
+  }
+
+  onSubmit(cardData) {
+    console.log(cardData);
   }
 
 }
