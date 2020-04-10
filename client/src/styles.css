@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+.container-narrow {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+div.card {
+    /*border-radius: 3%;*/
+    border: 1px solid black;
+    min-height: 5em;
+    padding: 1.3em;
+}
+
+div.question-card {
+    box-shadow: 7px 7px 2px yellow;
+    
+}
+
+div.answer-card {
+    box-shadow: 7px 7px 2px green;
+}
