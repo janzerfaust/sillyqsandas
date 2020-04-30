@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms'
+import { CardsService } from './cards.service';
+import { CardPair } from '../model/cardpair';
 
 @Component({
   selector: 'app-cards',
@@ -10,15 +12,18 @@ export class CardsComponent implements OnInit {
 
   saveForm;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+    private cardsService: CardsService) {
     this.saveForm = formBuilder.group({question: '', answer: ''});
   }
 
   ngOnInit() {
   }
 
-  onSubmit(cardData) {
+  onSubmit(cardData: CardPair) {
     console.log(cardData);
+    this.cardsService.addCardPair({ question: cardData.question, answer: cardData.answer})
+    .subscribe();
   }
 
 }

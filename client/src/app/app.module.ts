@@ -7,6 +7,8 @@ import { CardsComponent } from './cards/cards.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { fakeBackendInterceptor } from './dev/fake-backend.interceptor';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,13 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    // ONLY FOR DEVING WITHOUT BACKEND
+    fakeBackendInterceptor
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

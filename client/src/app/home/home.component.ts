@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CardsService } from '../cards/cards.service';
+import { CardPair } from '../model/cardpair';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  randomPair: CardPair = { question: '', answer: ''};
+
+  constructor(private cardsService: CardsService) { }
 
   ngOnInit() {
+    this.getPair();
+  }
+
+  getPair() {
+    this.cardsService.getRandomPair()
+    .subscribe(data => { this.randomPair = data; console.log(data) });
   }
 
 }
