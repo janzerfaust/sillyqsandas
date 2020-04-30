@@ -1,6 +1,18 @@
+body {
+    padding-top: 5em;
+}
+
 .container-narrow {
     margin: 0 auto;
     max-width: 700px;
+}
+
+button {
+    margin-right: 1em;
+}
+
+.btn {
+    border: 1px solid gray;
 }
 
 div.card {
@@ -8,6 +20,14 @@ div.card {
     border: 1px solid black;
     min-height: 5em;
     padding: 1.3em;
+}
+
+.card-input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
 }
 
 div.question-card {
