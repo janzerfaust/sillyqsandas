@@ -1,9 +1,17 @@
 <form class="row" [formGroup]="saveForm" (ngSubmit)="onSubmit(saveForm.value)">
+  <div class="col-sm-12">
+    <div class="card">
+      <div><b>Give a nice name for you collection</b></div>
+      <div>
+        <input (ngModelChange)="onChangeAnyController()" type="text" class="card-input" formControlName="collection" placeholder="My cool collection" />
+      </div>  
+    </div>
+  </div>
   <div class="col-md-6 col-sm-12">
     <div class="card question-card">
       <div><b>Add your question</b></div>
       <div>
-        <input type="text" class="card-input" placeholder="Are you familiar with moles?" formControlName="question" value="Are you familiar with moles?" />
+        <input #question (ngModelChange)="onChangeAnyController()" type="text" class="card-input" placeholder="Are you familiar with moles?" formControlName="question" value="Are you familiar with moles?" />
       </div>
     </div>
   </div>
@@ -11,12 +19,18 @@
     <div class="card answer-card">
       <div><b>Add your answer</b></div>
       <div>
-        <input type="text" class="card-input" placeholder="Yes, moles are the best!" formControlName="answer" value="Yes, moles are the best!" />
+        <input (ngModelChange)="onChangeAnyController()" type="text" class="card-input" placeholder="Yes, moles are the best!" formControlName="answer" value="Yes, moles are the best!" />
       </div>
     </div>
-  </div>
+  </div>  
   <div class="col-sm-12 save-section">
-    <button class="btn btn-primary">Save</button>
+    <button class="btn btn-primary" >Save</button>
     <a routerLink="/"><button class="btn">Back</button></a>
+  </div>
+  <div *ngIf="!saveForm.valid && isSubmitted" class="col-sm-12">
+    {{validationErrorMessage}}
+  </div>
+  <div class="col-sm-12">
+    <div id="save-information" [ngClass]="{'greentext': saveOk, 'redtext': !saveOk}">{{responseMessage}}</div>
   </div>
 </form>

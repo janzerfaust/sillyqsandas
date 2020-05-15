@@ -33,7 +33,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         }
 
         function createCardPair() {
-            const { question, answer } = body;
+            const { question, answer, collection } = body;
             questions.push(question);
             answers.push(answer);
             localStorage.setItem('questions', JSON.stringify(questions));

@@ -9,7 +9,7 @@ import { CardPair } from '../model/cardpair';
 })
 export class HomeComponent implements OnInit {
 
-  randomPair: CardPair = { question: '', answer: ''};
+  randomPair: CardPair = { question: '', answer: '', collection: ''};
 
   constructor(private cardsService: CardsService) { }
 
