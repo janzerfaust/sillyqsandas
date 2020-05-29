@@ -9,12 +9,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { fakeBackendInterceptor } from './dev/fake-backend.interceptor';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateGameComponent } from './game/create-game/create-game.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
-    HomeComponent
+    HomeComponent,
+    CreateGameComponent    
   ],
   imports: [
     BrowserModule,

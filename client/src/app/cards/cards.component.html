@@ -1,7 +1,10 @@
 <form class="row" [formGroup]="saveForm" (ngSubmit)="onSubmit(saveForm.value)">
   <div class="col-sm-12">
     <div class="card">
-      <div><b>Give a nice name for you collection</b></div>
+      <div>
+        <b>Give a nice name for you collection</b>
+        <sup>Hint! If you want to add to an existin collection write that collections name here</sup>
+      </div>
       <div>
         <input (ngModelChange)="onChangeAnyController()" type="text" class="card-input" formControlName="collection" placeholder="My cool collection" />
       </div>  
