@@ -39,3 +39,7 @@ div.question-card {
 div.answer-card {
     box-shadow: 7px 7px 2px green;
 }
+
+form {
+    margin: 2rem 0 1rem 0;
+}
