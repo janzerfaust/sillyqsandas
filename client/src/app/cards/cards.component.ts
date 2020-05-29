@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms'
+import { FormBuilder, Validators, FormGroup } from '@angular/forms'
 import { CardsService } from './cards.service';
 import { CardPair } from '../model/cardpair';
 
@@ -10,7 +10,7 @@ import { CardPair } from '../model/cardpair';
 })
 export class CardsComponent implements OnInit {
 
-  saveForm;
+  saveForm: FormGroup;
   saveOk: boolean = true;
   responseMessage: string;
   isSubmitted: boolean = false;

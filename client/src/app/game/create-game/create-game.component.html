@@ -1,3 +1,41 @@
-<p>
-  create-game works!
-</p>
+<form [formGroup]="createGameForm" (ngSubmit)="onSubmit(createGameForm.value)">
+  <div class="form-group row">
+    <label for="txtPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="txtPassword" />
+    </div>    
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-2">Allow spectators</div>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="ckbAllowSpectators" />
+        <label class="form-check-label" for="ckbAllowSpectators">Yes</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-2">Use all collections</div>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="ckbUseAllCollections" />
+        <label class="form-check-label" for="ckbUseAllCollections">Yes</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-2">Specify card collections</div>
+    <div class="col-sm-10">
+      <div>
+        <input type="text" placeholder="Start typing to find a collection" class="form-control" />
+      </div>
+      <div>
+        <ul>
+          <li>Collection 1</li>
+          <li>Named collection of something stupid</li>
+          <li>diu diu</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</form>
